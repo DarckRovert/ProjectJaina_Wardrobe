@@ -1,6 +1,10 @@
 --  🎬 TRANSICION ENTRE VENTANAS DEL ECOSISTEMA WOW PERÚ
 --  Efecto de fundido cruzado suave entre el Armario, la Tienda y el Pase.
-if WoWPeru_Cruzar or PeruLand_Cruzar then return end
+if WoWPeru_Cruzar and WoWPeru_Aparecer then
+    PeruLand_Cruzar = PeruLand_Cruzar or WoWPeru_Cruzar
+    PeruLand_Aparecer = PeruLand_Aparecer or WoWPeru_Aparecer
+    return
+end
 
 local SALIDA, ENTRADA = 0.30, 0.35
 
