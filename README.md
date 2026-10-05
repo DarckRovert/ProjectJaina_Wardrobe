@@ -1,7 +1,7 @@
 # 🇵🇪 WoW Perú — Guardarropa & Transfiguración (v1.0.0)
 
 **Versión:** 1.0.0 (WotLK 3.3.5a Staggered Render Edition)  
-**Autor:** DarckRovert & WoW Perú Team (Basado en arquitectura PeruLand y Ascension WoW)  
+**Autor:** DarckRovert & WoW Perú Team  
 **Servidor Destino:** [WoW Perú](https://wow-peru.lat/) — Reino Andino  
 **Entorno de Ejecución:** World of Warcraft 3.3.5a (Build 12340) | Lua 5.1 / Eluna C++  
 **Repositorio Oficial:** [DarckRovert/WoWPeru_Wardrobe](https://github.com/DarckRovert/WoWPeru_Wardrobe)
@@ -20,7 +20,7 @@
 
 **WoWPeru_Wardrobe** es el **módulo oficial #15** del ecosistema de addons de **WoW Perú - Reino Andino**. Proporciona una interfaz moderna, inmersiva y de alto rendimiento para la colección y transfiguración de apariencias visuales en el cliente World of Warcraft 3.3.5a (Wrath of the Lich King).
 
-Inspirado en la interfaz de guardarropa de Ascension WoW y perfeccionado sobre la base técnica de PeruLand, este addon ha sido completamente **sanitizado, re-ingenierizado y protegido contra fallos de concurrencia y congelamiento de FPS**.
+Inspirado en interfaces de guardarropa avanzadas y optimizado específicamente para el motor 3.3.5a, este addon ha sido completamente **sanitizado, re-ingenierizado y protegido contra fallos de concurrencia y congelamiento de FPS**.
 
 ```
 ┌────────────────────────────────────────────────────────────────────────┐
@@ -82,7 +82,18 @@ Inspirado en la interfaz de guardarropa de Ascension WoW y perfeccionado sobre l
 
 ---
 
+## 📥 Instalación en el Cliente WoW
+
+1. Asegúrate de que la carpeta `WoWPeru_Wardrobe` se encuentre dentro de:
+   ```
+   World of Warcraft/Interface/AddOns/WoWPeru_Wardrobe/
+   ```
+2. Inicia el cliente de juego WoW Perú y verifica que el addon esté marcado en la lista de accesorios del personaje.
+3. Dentro del juego, escribe `/armario` o `/wardrobe` para abrir la interfaz.
+
+---
+
 ## 📜 Licencia y Atribución
 
 Distribuido bajo la licencia [MIT](LICENSE).  
-Para consultar los detalles de autoría original, componentes de Ascension WoW y aportes de PeruLand, consulta el archivo [NOTICE.md](NOTICE.md).
+Para consultar los detalles de autoría, genealogía y componentes de terceros, consulta el archivo [NOTICE.md](NOTICE.md).
