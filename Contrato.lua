@@ -194,7 +194,7 @@ local cache = { nombres = {}, version = 0, piezas = nil, piezasVersion = -1 }
 local cargador = CreateFrame("Frame")
 cargador:RegisterEvent("ADDON_LOADED")
 cargador:SetScript("OnEvent", function(self, _, quien)
-    if quien ~= "WoWPeru_Wardrobe" and quien ~= "PeruLandArmario" then return end
+    if quien ~= "WoWPeru_Wardrobe" then return end
     WoWPeru_Wardrobe_Cache = WoWPeru_Wardrobe_Cache or { nombres = {}, version = 0 }
     cache = WoWPeru_Wardrobe_Cache
     cache.nombres = cache.nombres or {}

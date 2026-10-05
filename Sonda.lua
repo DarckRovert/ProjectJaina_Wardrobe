@@ -23,11 +23,11 @@ local PREFIJO = "WP_WARDROBE"
 --  Un tooltip escondido para preguntarle al cliente por un objeto suelto
 --  (orden `item|<id>`). Se crea UNA vez, aqui: crearlo dentro del manejador
 --  con un nombre distinto cada vez deja marcos vivos para siempre.
-local sondaItem = CreateFrame("GameTooltip", "PeruLandArmarioSondaItem", nil,
+local sondaItem = CreateFrame("GameTooltip", "WoWPeru_Wardrobe_SondaItem", nil,
                               "GameTooltipTemplate")
 sondaItem:SetOwner(UIParent, "ANCHOR_NONE")
 
-local sonda = CreateFrame("DressUpModel", "PeruLandArmarioSonda3D", UIParent)
+local sonda = CreateFrame("DressUpModel", "WoWPeru_Wardrobe_Sonda3D", UIParent)
 sonda:SetSize(64, 64)
 sonda:SetPoint("TOPLEFT", UIParent, "TOPLEFT", -500, 500)   -- fuera de pantalla
 sonda:Hide()
@@ -38,7 +38,7 @@ sonda:Hide()
 --
 --    🎯 Un instrumento se valida contra algo que TIENE que salir. Aqui, un
 --       modelo de Blizzard puesto a mano: si ese falla, el roto es la sonda.
-local control = CreateFrame("DressUpModel", "PeruLandArmarioControl3D", UIParent)
+local control = CreateFrame("DressUpModel", "WoWPeru_Wardrobe_Control3D", UIParent)
 control:SetSize(64, 64)
 control:SetPoint("CENTER")          -- ⚠️ en pantalla: un marco fuera de la
 control:SetAlpha(0)                 --    vista puede no llegar a dibujarse

@@ -223,8 +223,9 @@ local function SinCuerpo(fn)
     if PeruLand_SinComponentes then pcall(PeruLand_SinComponentes) end
     local ok, err = pcall(fn)
     if PeruLand_ConComponentes then pcall(PeruLand_ConComponentes) end
-    if not ok and PeruLandArmarioApuntar then
-        PeruLandArmarioApuntar("error", "SinCuerpo: " .. tostring(err))
+    local log = WoWPeru_Wardrobe_Apuntar or PeruLandArmarioApuntar
+    if not ok and log then
+        log("error", "SinCuerpo: " .. tostring(err))
     end
 end
 

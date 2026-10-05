@@ -52,8 +52,9 @@ if PaperDollItemSlotButton_Update then
 end
 
 --  Marca de carga: si este archivo revienta, su linea NO sale.
-if PeruLandArmarioApuntar then
-    PeruLandArmarioApuntar("carga", "FichaPersonaje.lua")
+local log = WoWPeru_Wardrobe_Apuntar or PeruLandArmarioApuntar
+if log then
+    log("carga", "FichaPersonaje.lua")
 end
 
 --  ---------------------------------------------------------------------------

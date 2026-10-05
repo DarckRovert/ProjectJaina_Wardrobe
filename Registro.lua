@@ -38,7 +38,7 @@ local ev = CreateFrame("Frame")
 ev:RegisterEvent("ADDON_LOADED")
 ev:RegisterEvent("PLAYER_ENTERING_WORLD")
 ev:SetScript("OnEvent", function(_, evento, cual)
-    if evento == "ADDON_LOADED" and (cual == "WoWPeru_Wardrobe" or cual == "PeruLandArmario") then
+    if evento == "ADDON_LOADED" and cual == "WoWPeru_Wardrobe" then
         WoWPeru_Wardrobe_Registro = WoWPeru_Wardrobe_Registro or {}
         guardado = WoWPeru_Wardrobe_Registro
         Apuntar("carga", "WoWPeru_Wardrobe inicializado correctamente.")
