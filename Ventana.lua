@@ -950,12 +950,20 @@ local function Crear()
     --     versiones de lo mismo, y la segunda siempre acaba vieja.
     local PESTANAS = {
         { texto = "Progresión" },
-        { texto = "Tienda" },
-        { texto = "Armario", aqui = true },
-        { texto = (_G.SEASON_9_TITLE or "Temporada 1"),
+        { texto = "Tienda",
           alPulsar = function()
-              local abrir = SlashCmdList and SlashCmdList["PERULANDPASE"]
-              PeruLand_Cruzar(V, function() if abrir then abrir("") end end)
+              local abrir = SlashCmdList and (SlashCmdList["WOWPERU_VISUAL"] or SlashCmdList["PERULANDTIENDA"])
+              if abrir then
+                  PeruLand_Cruzar(V, function() abrir("") end)
+              end
+          end },
+        { texto = "Armario", aqui = true },
+        { texto = (_G.SEASON_9_TITLE or "Pase de Batalla"),
+          alPulsar = function()
+              local abrir = SlashCmdList and (SlashCmdList["WOWPERUBP"] or SlashCmdList["PERULANDPASE"])
+              if abrir then
+                  PeruLand_Cruzar(V, function() abrir("") end)
+              end
           end },
     }
 
@@ -1043,8 +1051,10 @@ local function Crear()
     pase:SetPoint("TOPLEFT", V, "TOPLEFT", MX(6), -MY(97 + 5 * 97))   -- 6.a: «Transfigurar» es la 5.a
     pase:PonerIcono("GIcoPase")
     pase:SetScript("OnClick", function()
-        local abrir = SlashCmdList and SlashCmdList["PERULANDPASE"]
-        PeruLand_Cruzar(V, function() if abrir then abrir("") end end)
+        local abrir = SlashCmdList and (SlashCmdList["WOWPERUBP"] or SlashCmdList["PERULANDPASE"])
+        if abrir then
+            PeruLand_Cruzar(V, function() abrir("") end)
+        end
     end)
 
     --  Pulsar una ficha se la prueba. Aplicar es otro boton, como en Ascension:
