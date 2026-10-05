@@ -628,11 +628,11 @@ local function Crear()
         else
             --  Sin extension: la direccion en una caja ya seleccionada, para
             --  que baste Ctrl+C.
-            StaticPopup_Show("PERULAND_ARMARIO_RECARGA")
+            StaticPopup_Show("WOWPERU_WARDROBE_RECARGA")
         end
     end)
 
-    StaticPopupDialogs["PERULAND_ARMARIO_RECARGA"] = {
+    StaticPopupDialogs["WOWPERU_WARDROBE_RECARGA"] = {
         text = "Copia esta direccion y abrela en tu navegador:",
         button1 = "Cerrar",
         hasEditBox = 1, editBoxWidth = 260,
@@ -642,6 +642,7 @@ local function Crear()
             if caja then caja:SetText(RECARGA); caja:HighlightText() end
         end,
     }
+    StaticPopupDialogs["PERULAND_ARMARIO_RECARGA"] = StaticPopupDialogs["WOWPERU_WARDROBE_RECARGA"]
 
     --- Rellena la ficha con lo que diga el servidor de ese conjunto.
     local mirando
@@ -768,7 +769,7 @@ local function Crear()
         end
         if hayTmog and not modo then
             if not EnCapital() then
-                StaticPopup_Show("PERULAND_ARMARIO_TMOG_LEJOS")
+                StaticPopup_Show("WOWPERU_WARDROBE_TMOG_LEJOS")
                 return
             end
             local n = 0
@@ -777,10 +778,10 @@ local function Crear()
             end
             --  🪤 StaticPopup_Show de 3.3.5a solo pasa DOS valores al texto
             --     (el tercero revienta en SetFormattedText): se escribe aqui.
-            StaticPopupDialogs["PERULAND_ARMARIO_TMOG_PAGO"].text = string.format(
-                "Transfigurar %d pieza(s).\n\nCuesta %d de oro, o %d créditos PeruLand.\n¿Cómo quieres pagar?",
+            StaticPopupDialogs["WOWPERU_WARDROBE_TMOG_PAGO"].text = string.format(
+                "Transfigurar %d pieza(s).\n\nCuesta %d de oro, o %d Tokens Andinos.\n¿Cómo quieres pagar?",
                 n, n * PLARM.TMOG_ORO, n * PLARM.TMOG_CRED)
-            StaticPopup_Show("PERULAND_ARMARIO_TMOG_PAGO")
+            StaticPopup_Show("WOWPERU_WARDROBE_TMOG_PAGO")
             return
         end
         local creditos = (modo == "creditos")
@@ -809,7 +810,7 @@ local function Crear()
     PLARM.Aplicar2 = function(modo) Aplicar2(modo) end
     aplicar:SetScript("OnClick", function() Aplicar2() end)
 
-    --  Mismo arreglo que PERULAND_ARMARIO_QUITAR: encima del armario y con
+    --  Mismo arreglo que WOWPERU_WARDROBE_QUITAR: encima del armario y con
     --  fondo solido (si no, sale debajo y se transparenta).
     function PLARM.PopupEncima(self, mostrar)
         if mostrar then
@@ -826,22 +827,25 @@ local function Crear()
             if self.PLFondo then self.PLFondo:Hide() end
         end
     end
-    StaticPopupDialogs["PERULAND_ARMARIO_TMOG_PAGO"] = {
+    StaticPopupDialogs["WOWPERU_WARDROBE_TMOG_PAGO"] = {
         text = "",   -- se rellena al mostrarla (ver Aplicar2)
-        button1 = "Pagar con oro", button2 = "Cancelar", button3 = "Pagar con créditos",
+        button1 = "Pagar con oro", button2 = "Cancelar", button3 = "Pagar con Tokens",
         OnAccept = function() Aplicar2("oro") end,
         OnAlt = function() Aplicar2("creditos") end,
         OnShow = function(self) PLARM.PopupEncima(self, true) end,
         OnHide = function(self) PLARM.PopupEncima(self, false) end,
         timeout = 0, whileDead = true, hideOnEscape = true, preferredIndex = 3,
     }
-    StaticPopupDialogs["PERULAND_ARMARIO_TMOG_LEJOS"] = {
+    StaticPopupDialogs["PERULAND_ARMARIO_TMOG_PAGO"] = StaticPopupDialogs["WOWPERU_WARDROBE_TMOG_PAGO"]
+
+    StaticPopupDialogs["WOWPERU_WARDROBE_TMOG_LEJOS"] = {
         text = "Para transfigurar tienes que estar en Ventormenta u Orgrimmar.\n\n(Quitar una transfiguración se puede en cualquier sitio.)",
         button1 = "Entendido",
         OnShow = function(self) PLARM.PopupEncima(self, true) end,
         OnHide = function(self) PLARM.PopupEncima(self, false) end,
         timeout = 0, whileDead = true, hideOnEscape = true, preferredIndex = 3,
     }
+    StaticPopupDialogs["PERULAND_ARMARIO_TMOG_LEJOS"] = StaticPopupDialogs["WOWPERU_WARDROBE_TMOG_LEJOS"]
 
     --  🔑 GUARDAR ATUENDO: pide el nombre y lo manda. Lo que se guarda es lo
     --  que llevas PUESTO segun el servidor, no lo que crea el addon -- si no,
@@ -849,10 +853,10 @@ local function Crear()
     local guardar = PLARM.BotonG(V, "Guardar atuendo", MX(252), MY(41), false, "GMarcador")
     guardar:SetPoint("TOPLEFT", V, "TOPLEFT", MX(994), -MY(580) - EXTRA)
     guardar:SetScript("OnClick", function()
-        StaticPopup_Show("PERULAND_ARMARIO_GUARDAR")
+        StaticPopup_Show("WOWPERU_WARDROBE_GUARDAR")
     end)
 
-    StaticPopupDialogs["PERULAND_ARMARIO_GUARDAR"] = {
+    StaticPopupDialogs["WOWPERU_WARDROBE_GUARDAR"] = {
         text = "Nombre para este atuendo:",
         button1 = "Guardar", button2 = "Cancelar",
         hasEditBox = 1, maxLetters = 32,
@@ -870,6 +874,7 @@ local function Crear()
             self:GetParent():Hide()
         end,
     }
+    StaticPopupDialogs["PERULAND_ARMARIO_GUARDAR"] = StaticPopupDialogs["WOWPERU_WARDROBE_GUARDAR"]
 
     --  🔴 30-09-2026: NO HABIA FORMA DE QUITARSE UNA APARIENCIA. «Cancelar»
     --     solo deshace la PRUEBA en el muñeco; lo aplicado se quedaba para
@@ -887,9 +892,9 @@ local function Crear()
     local quitar = PLARM.BotonG(V, "Quitar todo", MX(124), MY(41), false)
     quitar:SetPoint("TOPLEFT", V, "TOPLEFT", MX(1122), -MY(633) - EXTRA)
     quitar:SetScript("OnClick", function()
-        StaticPopup_Show("PERULAND_ARMARIO_QUITAR")
+        StaticPopup_Show("WOWPERU_WARDROBE_QUITAR")
     end)
-    StaticPopupDialogs["PERULAND_ARMARIO_QUITAR"] = {
+    StaticPopupDialogs["WOWPERU_WARDROBE_QUITAR"] = {
         text = "¿Quitarte todas las apariencias y volver a verte con tu equipo real?\n\nLas apariencias siguen en tu colección: te las puedes volver a poner.",
         button1 = "Quitar", button2 = "Cancelar",
         timeout = 0, whileDead = 1, hideOnEscape = 1, preferredIndex = 3,
@@ -921,6 +926,7 @@ local function Crear()
             estado:SetText("Quitando...")
         end,
     }
+    StaticPopupDialogs["PERULAND_ARMARIO_QUITAR"] = StaticPopupDialogs["WOWPERU_WARDROBE_QUITAR"]
 
     -- -----------------------------------------------------------------------
     --  🔴 LA FILA DE ABAJO: SIN ESTO, DEL ARMARIO NO SE SALE
@@ -949,31 +955,36 @@ local function Crear()
     --     filas. Tener aqui una copia del «a donde va» es tener dos
     --     versiones de lo mismo, y la segunda siempre acaba vieja.
     local PESTANAS = {
-        { texto = "Progresión" },
+        { texto = "Progresión",
+          alPulsar = function()
+              local abrir = SlashCmdList and (SlashCmdList["WOWPERU_MODES"] or SlashCmdList["WOWPERUPRIDE"])
+              if abrir then
+                  WoWPeru_Cruzar(V, function() abrir("") end)
+              end
+          end },
         { texto = "Tienda",
           alPulsar = function()
-              local abrir = SlashCmdList and (SlashCmdList["WOWPERU_VISUAL"] or SlashCmdList["PERULANDTIENDA"])
+              local abrir = SlashCmdList and (SlashCmdList["WOWPERU_VISUAL"] or SlashCmdList["WOWPERUVISUALSHOP"])
               if abrir then
-                  PeruLand_Cruzar(V, function() abrir("") end)
+                  WoWPeru_Cruzar(V, function() abrir("") end)
               end
           end },
         { texto = "Armario", aqui = true },
-        { texto = (_G.SEASON_9_TITLE or "Pase de Batalla"),
+        { texto = "Pase de Batalla",
           alPulsar = function()
-              local abrir = SlashCmdList and (SlashCmdList["WOWPERUBP"] or SlashCmdList["PERULANDPASE"])
+              local abrir = SlashCmdList and SlashCmdList["WOWPERUBP"]
               if abrir then
-                  PeruLand_Cruzar(V, function() abrir("") end)
+                  WoWPeru_Cruzar(V, function() abrir("") end)
               end
           end },
     }
 
     local anterior
     for i, p in ipairs(PESTANAS) do
-        local t = CreateFrame("Button", "PeruLandArmarioTab" .. i, V,
+        local t = CreateFrame("Button", "WoWPeru_Wardrobe_Tab" .. i, V,
                               "CharacterFrameTabButtonTemplate")
         t:SetText(p.texto)
         --  🪤 El ancho no se pone a mano: la plantilla lo calcula del texto.
-        --     Fijarlo deja «Temporada 1 - Hijos del Sol» cortada.
         PanelTemplates_TabResize(t, 0)
 
         if anterior then
@@ -984,27 +995,13 @@ local function Crear()
         anterior = t
 
         if p.aqui then
-            --  La de «aqui estas» va hundida y sin reaccionar, como en
-            --  cualquier ventana de Blizzard.
             t:Disable()
             t:SetAlpha(1)
         elseif p.alPulsar then
             t:SetScript("OnClick", p.alPulsar)
         else
-            --  Se pregunta al pase si esa pestaña lleva a algun sitio. Si el
-            --  addon del pase no esta cargado, o el destino no existe, se
-            --  queda apagada — nunca muerta y encendida.
-            local destino = p.texto
-            local hay = _G.PeruLandPaseTieneDestino
-                        and _G.PeruLandPaseTieneDestino(destino)
-            if hay then
-                t:SetScript("OnClick", function()
-                    PeruLand_Cruzar(V, function() _G.PeruLandPaseIrA(destino) end)
-                end)
-            else
-                t:Disable()
-                t:SetAlpha(0.5)
-            end
+            t:Disable()
+            t:SetAlpha(0.5)
         end
     end
 
@@ -1053,7 +1050,7 @@ local function Crear()
     pase:SetScript("OnClick", function()
         local abrir = SlashCmdList and (SlashCmdList["WOWPERUBP"] or SlashCmdList["PERULANDPASE"])
         if abrir then
-            PeruLand_Cruzar(V, function() abrir("") end)
+            WoWPeru_Cruzar(V, function() abrir("") end)
         end
     end)
 
@@ -1139,7 +1136,7 @@ function PLARM.Abrir2()
         end
     end
     V:Show()
-    PeruLand_Aparecer(V)     -- Transicion.lua: sin saltos bruscos
+    WoWPeru_Aparecer(V)     -- Transicion.lua: sin saltos bruscos
     PLARM.Contrato.Saludar()
     --  🔴 NO SE PIDE LA PRIMERA PAGINA HASTA QUE EL SERVIDOR HA CONTESTADO.
     --

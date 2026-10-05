@@ -132,7 +132,7 @@ local function Medir()
     anota("AddDoubleLine", metodo(tt, "AddDoubleLine", "a", "b"))
 
     -- 6. La extension propia: ¿esta cargada y responde?
-    anota("DLL_presente", type(_G.PeruLand_Extension) == "function")
+    anota("DLL_presente", type(_G.WoWPeru_Extension) == "function" or type(_G.PeruLand_Extension) == "function")
 
     --  Se manda en trozos: un mensaje de addon no pasa de 255 bytes.
     local linea, i = "", 0

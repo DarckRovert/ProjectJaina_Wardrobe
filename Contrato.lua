@@ -587,9 +587,9 @@ local TMOG_TEXTO = {
     [6]  = { "Esa apariencia no encaja con lo que llevas en esa ranura.", true },
     [7]  = { "No tienes oro suficiente para transfigurar.", true },
     [8]  = { "Te faltan fichas para transfigurar.", true },
-    --  PeruLand tmog-capital-creditos-v1 (cs_transmog.cpp)
+    -- WoW Perú transfiguración dual (Oro o Token Andino)
     [90] = { "Para transfigurar tienes que estar en Ventormenta u Orgrimmar.", true },
-    [91] = { "No tienes créditos PeruLand suficientes para transfigurar.", true },
+    [91] = { "No tienes Tokens Andinos suficientes para transfigurar.", true },
 }
 respuestas["tmog"] = function(resto)
     local ranura, objeto, res = tostring(resto):match("^(%d+)|(%d+)|(%d+)")
