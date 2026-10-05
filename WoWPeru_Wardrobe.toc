@@ -1,7 +1,7 @@
 ## Interface: 30300
 ## Title: |cFFD4AF37WoW Perú|r - Guardarropa & Transfiguración
 ## Notes: Colección y transfiguración de apariencias estéticas para WoW Perú. Se abre con /armario o /wardrobe.
-## Author: DarckRovert & WoW Perú Team (Basado en arquitectura PeruLand y Ascension WoW)
+## Author: DarckRovert & WoW Perú Team
 ## Version: 1.0.0
 ## SavedVariablesPerCharacter: WoWPeru_Wardrobe_Ajustes
 ## SavedVariables: WoWPeru_Wardrobe_Cache, WoWPeru_Wardrobe_Registro
