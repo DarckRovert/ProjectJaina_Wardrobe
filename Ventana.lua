@@ -739,8 +739,9 @@ local function Crear()
         self.t = 0
         local o = table.remove(colaTmog, 1)
         if not o then self:Hide() return end
-        SendChatMessage(string.format(".transmog aplicar %d %d%s", o[1], o[2],
-            o[3] and " 1" or ""), "SAY")
+        -- o[1] = objeto (appearanceId), o[2] = ranura (slotId), o[3] = creditos (boolean)
+        local modoPago = o[3] and "creditos" or "oro"
+        PLARM.Contrato.Mandar(string.format("tmog|%d|%d|%s", o[2], o[1], modoPago))
     end)
     local function Transfigurar(objeto, ranura, creditos)
         colaTmog[#colaTmog + 1] = { objeto, ranura, creditos }
