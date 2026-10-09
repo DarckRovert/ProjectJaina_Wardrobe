@@ -1,8 +1,8 @@
 --  🎬 TRANSICION ENTRE VENTANAS DEL ECOSISTEMA WOW PERÚ
 --  Efecto de fundido cruzado suave entre el Armario, la Tienda y el Pase.
-if WoWPeru_Cruzar and WoWPeru_Aparecer then
-    PeruLand_Cruzar = PeruLand_Cruzar or WoWPeru_Cruzar
-    PeruLand_Aparecer = PeruLand_Aparecer or WoWPeru_Aparecer
+if ProjectJaina_Cruzar and ProjectJaina_Aparecer then
+    PeruLand_Cruzar = PeruLand_Cruzar or ProjectJaina_Cruzar
+    PeruLand_Aparecer = PeruLand_Aparecer or ProjectJaina_Aparecer
     return
 end
 
@@ -29,14 +29,14 @@ local function Fundir(f, desde, hasta, dura, alFinal)
 end
 
 --- La ventana aparece desde transparente. Seguro de llamar siempre.
-function WoWPeru_Aparecer(f)
+function ProjectJaina_Aparecer(f)
     if not f or not f.SetAlpha then return end
     Fundir(f, 0, 1, ENTRADA)
 end
-PeruLand_Aparecer = WoWPeru_Aparecer
+PeruLand_Aparecer = ProjectJaina_Aparecer
 
 --- Desvanece `origen`, lo esconde y luego llama a `abrir`.
-function WoWPeru_Cruzar(origen, abrir)
+function ProjectJaina_Cruzar(origen, abrir)
     if not origen or not origen:IsShown() then
         if abrir then abrir() end
         return
@@ -50,5 +50,5 @@ function WoWPeru_Cruzar(origen, abrir)
         if raton then origen:EnableMouse(true) end
     end)
 end
-PeruLand_Cruzar = WoWPeru_Cruzar
+PeruLand_Cruzar = ProjectJaina_Cruzar
 

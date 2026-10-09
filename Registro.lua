@@ -1,14 +1,15 @@
 --[[
-    WoWPeru_Wardrobe - Registro.lua
-    Sistema de diagnóstico y registro local pasivo de WoW Perú.
+    ProjectJaina_Wardrobe - Registro.lua
+    Sistema de diagnóstico y registro local pasivo de Project Jaina.
     100% libre de telemetría invasiva y libre de manipulación de seterrorhandler.
 ]]
 
 local PREFIJO = "WP_WARDROBE"
 
-WoWPeru_Wardrobe_Registro = WoWPeru_Wardrobe_Registro or {}
+Wanos_Wardrobe_Registro = Wanos_Wardrobe_Registro or ProjectJaina_Wardrobe_Registro or {}
+        ProjectJaina_Wardrobe_Registro = Wanos_Wardrobe_Registro
 
-local guardado = WoWPeru_Wardrobe_Registro
+local guardado = ProjectJaina_Wardrobe_Registro
 local vistos = {}
 
 --- Apunta un registro local de diagnóstico (error, carga, aviso).
@@ -28,7 +29,7 @@ local function Apuntar(clase, texto)
 end
 
 -- Exportar para uso interno del addon
-WoWPeru_Wardrobe_Apuntar = Apuntar
+ProjectJaina_Wardrobe_Apuntar = Apuntar
 PeruLandArmarioApuntar = Apuntar -- Compatibilidad con módulos internos heredados
 
 -- ---------------------------------------------------------------------------
@@ -38,10 +39,11 @@ local ev = CreateFrame("Frame")
 ev:RegisterEvent("ADDON_LOADED")
 ev:RegisterEvent("PLAYER_ENTERING_WORLD")
 ev:SetScript("OnEvent", function(_, evento, cual)
-    if evento == "ADDON_LOADED" and cual == "WoWPeru_Wardrobe" then
-        WoWPeru_Wardrobe_Registro = WoWPeru_Wardrobe_Registro or {}
-        guardado = WoWPeru_Wardrobe_Registro
-        Apuntar("carga", "WoWPeru_Wardrobe inicializado correctamente.")
+    if evento == "ADDON_LOADED" and (cual == "Wanos_Wardrobe" or cual == "ProjectJaina_Wardrobe") then
+        Wanos_Wardrobe_Registro = Wanos_Wardrobe_Registro or ProjectJaina_Wardrobe_Registro or {}
+        ProjectJaina_Wardrobe_Registro = Wanos_Wardrobe_Registro
+        guardado = ProjectJaina_Wardrobe_Registro
+        Apuntar("carga", "ProjectJaina_Wardrobe inicializado correctamente.")
     elseif evento == "PLAYER_ENTERING_WORLD" then
         local piezas = {}
         for nombre, existe in pairs({

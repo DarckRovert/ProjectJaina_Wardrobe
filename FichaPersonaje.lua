@@ -52,7 +52,7 @@ if PaperDollItemSlotButton_Update then
 end
 
 --  Marca de carga: si este archivo revienta, su linea NO sale.
-local log = WoWPeru_Wardrobe_Apuntar or PeruLandArmarioApuntar
+local log = ProjectJaina_Wardrobe_Apuntar or PeruLandArmarioApuntar
 if log then
     log("carga", "FichaPersonaje.lua")
 end
@@ -128,3 +128,50 @@ if PaperDollItemSlotButton_OnEnter then
         end
     end)
 end
+
+--  ---------------------------------------------------------------------------
+--  ACCESO DIRECTO AL GUARDARROPA DESDE LA HOJA DE PERSONAJE (PaperDollFrame)
+--  ---------------------------------------------------------------------------
+local function IniciarBotonGuardarropa()
+    if not PaperDollFrame or _G["ProjectJaina_Wardrobe_PaperDollButton"] then return end
+
+    local btn = CreateFrame("Button", "ProjectJaina_Wardrobe_PaperDollButton", PaperDollFrame, "UIPanelButtonTemplate")
+    btn:SetWidth(96)
+    btn:SetHeight(22)
+    btn:SetPoint("TOPRIGHT", PaperDollFrame, "TOPRIGHT", -40, -40)
+    btn:SetFrameLevel(PaperDollFrame:GetFrameLevel() + 10)
+    btn:SetText("|cFFD4AF37Guardarropa|r")
+
+    btn:SetScript("OnClick", function()
+        PlaySound("igMainMenuOption")
+        if PLARM and PLARM.Abrir2 then
+            PLARM.Abrir2()
+        elseif SlashCmdList and SlashCmdList["WP_WARDROBEV2"] then
+            SlashCmdList["WP_WARDROBEV2"]("")
+        end
+    end)
+
+    btn:SetScript("OnEnter", function(self)
+        GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
+        GameTooltip:SetText("|cFFD4AF37Guardarropa & Transfiguración|r", 1, 1, 1)
+        GameTooltip:AddLine("Haz clic para abrir el catálogo de apariencias estéticas y transfigurar tu personaje.", 0.85, 0.85, 0.85, 1)
+        GameTooltip:AddLine("|cFF808080Comando alternativo: /armario o /wardrobe|r", 0.6, 0.6, 0.6, 1)
+        GameTooltip:Show()
+    end)
+
+    btn:SetScript("OnLeave", function()
+        GameTooltip:Hide()
+    end)
+end
+
+if PaperDollFrame then
+    IniciarBotonGuardarropa()
+else
+    local f = CreateFrame("Frame")
+    f:RegisterEvent("PLAYER_LOGIN")
+    f:SetScript("OnEvent", function(self)
+        self:UnregisterEvent("PLAYER_LOGIN")
+        IniciarBotonGuardarropa()
+    end)
+end
+

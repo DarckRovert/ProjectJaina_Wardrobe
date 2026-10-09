@@ -82,7 +82,7 @@ local estado     -- la linea de abajo
 local function Crear()
     local E = PLARM.Contrato.Estado
 
-    V = CreateFrame("Frame", "WoWPeru_Wardrobe_Frame", UIParent)
+    V = CreateFrame("Frame", "ProjectJaina_Wardrobe_Frame", UIParent)
     V:SetSize(ANCHO, ALTO)
     V:SetPoint("CENTER")
     V:SetFrameStrata("HIGH")
@@ -113,7 +113,7 @@ local function Crear()
     tira(0, 640, MYl(640), 0)
     tira(640, 700, MYl(60) + EXTRA, MYl(640))
     tira(700, 720, MYl(20), MYl(700) + EXTRA)
-    tinsert(UISpecialFrames, "WoWPeru_Wardrobe_Frame")     -- se cierra con Escape
+    tinsert(UISpecialFrames, "ProjectJaina_Wardrobe_Frame")     -- se cierra con Escape
 
     --  El titulo va pintado en el marco: el de texto se esconde.
     local titulo = PLARM.Titulo(V, "GUARDARROPA", 300)
@@ -615,7 +615,7 @@ local function Crear()
     --
     --    🎯 Una capacidad nueva no puede volverse un requisito. Si la
     --       extension falta, la accion sigue existiendo, mas incomoda.
-    local RECARGA = "https://wow-peru.lat/tienda"
+    local RECARGA = "https://worldofwanos.com/tienda"
 
     local recargar = PLARM.Boton(V, "Recargar", 96, 26)
     recargar:ClearAllPoints()
@@ -960,14 +960,14 @@ local function Crear()
           alPulsar = function()
               local abrir = SlashCmdList and (SlashCmdList["WOWPERU_MODES"] or SlashCmdList["WOWPERUPRIDE"])
               if abrir then
-                  WoWPeru_Cruzar(V, function() abrir("") end)
+                  ProjectJaina_Cruzar(V, function() abrir("") end)
               end
           end },
         { texto = "Tienda",
           alPulsar = function()
               local abrir = SlashCmdList and (SlashCmdList["WOWPERU_VISUAL"] or SlashCmdList["WOWPERUVISUALSHOP"])
               if abrir then
-                  WoWPeru_Cruzar(V, function() abrir("") end)
+                  ProjectJaina_Cruzar(V, function() abrir("") end)
               end
           end },
         { texto = "Armario", aqui = true },
@@ -975,14 +975,14 @@ local function Crear()
           alPulsar = function()
               local abrir = SlashCmdList and SlashCmdList["WOWPERUBP"]
               if abrir then
-                  WoWPeru_Cruzar(V, function() abrir("") end)
+                  ProjectJaina_Cruzar(V, function() abrir("") end)
               end
           end },
     }
 
     local anterior
     for i, p in ipairs(PESTANAS) do
-        local t = CreateFrame("Button", "WoWPeru_Wardrobe_Tab" .. i, V,
+        local t = CreateFrame("Button", "ProjectJaina_Wardrobe_Tab" .. i, V,
                               "CharacterFrameTabButtonTemplate")
         t:SetText(p.texto)
         --  🪤 El ancho no se pone a mano: la plantilla lo calcula del texto.
@@ -1051,7 +1051,7 @@ local function Crear()
     pase:SetScript("OnClick", function()
         local abrir = SlashCmdList and (SlashCmdList["WOWPERUBP"] or SlashCmdList["PERULANDPASE"])
         if abrir then
-            WoWPeru_Cruzar(V, function() abrir("") end)
+            ProjectJaina_Cruzar(V, function() abrir("") end)
         end
     end)
 
@@ -1137,7 +1137,7 @@ function PLARM.Abrir2()
         end
     end
     V:Show()
-    WoWPeru_Aparecer(V)     -- Transicion.lua: sin saltos bruscos
+    ProjectJaina_Aparecer(V)     -- Transicion.lua: sin saltos bruscos
     PLARM.Contrato.Saludar()
     --  🔴 NO SE PIDE LA PRIMERA PAGINA HASTA QUE EL SERVIDOR HA CONTESTADO.
     --

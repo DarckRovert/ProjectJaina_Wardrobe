@@ -223,7 +223,7 @@ local function SinCuerpo(fn)
     if PeruLand_SinComponentes then pcall(PeruLand_SinComponentes) end
     local ok, err = pcall(fn)
     if PeruLand_ConComponentes then pcall(PeruLand_ConComponentes) end
-    local log = WoWPeru_Wardrobe_Apuntar or PeruLandArmarioApuntar
+    local log = ProjectJaina_Wardrobe_Apuntar or PeruLandArmarioApuntar
     if not ok and log then
         log("error", "SinCuerpo: " .. tostring(err))
     end
@@ -611,7 +611,7 @@ function PLARM.Ficha.Crear(padre, indice)
     --       barras invertidas al escribir ficheros. Volvio a pasar, y se
     --       tardo diez intentos en mirarlo porque «no se ve» parecia un
     --       problema de dibujo y era de ruta.
-    ruleta:SetTexture("Interface\\AddOns\\WoWPeru_Wardrobe\\arte\\medallon.tga")
+    ruleta:SetTexture("Interface\\AddOns\\Jaina_Wardrobe\\arte\\medallon.tga")
     --  🔴 ADITIVA, O SOLO SE VE UN CUADRADO NEGRO.
     --
     --  Se extrajo el `.blp` y **se miro**: es una estrella blanca sobre fondo

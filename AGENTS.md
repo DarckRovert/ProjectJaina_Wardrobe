@@ -1,7 +1,7 @@
-# 🤖 Directrices de Ingeniería y Restricciones para Agentes IA — WoWPeru_Wardrobe
+# 🤖 Directrices de Ingeniería y Restricciones para Agentes IA — Wanos_Wardrobe
 
-**Addon:** `WoWPeru_Wardrobe`  
-**Repositorio Oficial:** [https://github.com/DarckRovert/WoWPeru_Wardrobe](https://github.com/DarckRovert/WoWPeru_Wardrobe)  
+**Addon:** `Wanos_Wardrobe`  
+**Repositorio Oficial:** [https://github.com/DarckRovert/Wanos_Wardrobe](https://github.com/DarckRovert/Wanos_Wardrobe)  
 **Motor Gráfico y Runtime:** WoW 3.3.5a WotLK (Build 12340) / Lua 5.1 (Blizzard VM)
 
 ---

@@ -121,18 +121,18 @@ local function Medir()
     -- 4. Cuanta memoria de Lua consume el addon. El cliente de 3.3.5a se
     --    vuelve inestable muy por encima de ~100 MB.
     UpdateAddOnMemoryUsage()
-    anota("KB_addon", math.floor(GetAddOnMemoryUsage("WoWPeru_Wardrobe") or GetAddOnMemoryUsage("PeruLandArmario") or 0))
+    anota("KB_addon", math.floor(GetAddOnMemoryUsage("ProjectJaina_Wardrobe") or GetAddOnMemoryUsage("PeruLandArmario") or 0))
     anota("KB_lua_total", math.floor(collectgarbage("count")))
 
     -- 5. Tooltips propios y hipervinculos: si esto va, la ficha rica no
     --    necesita DLL.
-    local tt = CreateFrame("GameTooltip", "WoWPeruLimitesTT", nil, "GameTooltipTemplate")
+    local tt = CreateFrame("GameTooltip", "ProjectJainaLimitesTT", nil, "GameTooltipTemplate")
     tt:SetOwner(UIParent, "ANCHOR_NONE")
     anota("SetHyperlink", metodo(tt, "SetHyperlink", "item:913458"))
     anota("AddDoubleLine", metodo(tt, "AddDoubleLine", "a", "b"))
 
     -- 6. La extension propia: ¿esta cargada y responde?
-    anota("DLL_presente", type(_G.WoWPeru_Extension) == "function" or type(_G.PeruLand_Extension) == "function")
+    anota("DLL_presente", type(_G.ProjectJaina_Extension) == "function" or type(_G.PeruLand_Extension) == "function")
 
     --  Se manda en trozos: un mensaje de addon no pasa de 255 bytes.
     local linea, i = "", 0

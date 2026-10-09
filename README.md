@@ -1,24 +1,24 @@
-# 🇵🇪 WoW Perú — Guardarropa & Transfiguración (v1.0.0)
+# 🇵🇪 Project Jaina — Guardarropa & Transfiguración (v1.0.0)
 
 **Versión:** 1.0.0 (WotLK 3.3.5a Staggered Render Edition)  
-**Autor:** DarckRovert & WoW Perú Team  
-**Servidor Destino:** [WoW Perú](https://wow-peru.lat/) — Reino Andino  
+**Autor:** DarckRovert & Project Jaina Team  
+**Servidor Destino:** [Project Jaina](https://worldofwanos.com/) — Project Jaina  
 **Entorno de Ejecución:** World of Warcraft 3.3.5a (Build 12340) | Lua 5.1 / Eluna C++  
-**Repositorio Oficial:** [DarckRovert/WoWPeru_Wardrobe](https://github.com/DarckRovert/WoWPeru_Wardrobe)
+**Repositorio Oficial:** [DarckRovert/Wanos_Wardrobe](https://github.com/DarckRovert/Wanos_Wardrobe)
 
 ---
 
-[![WoW Client](https://img.shields.io/badge/WoW%20Client-3.3.5a%20(Build%2012340)-blue.svg)](https://wow-peru.lat/)
-[![Servidor](https://img.shields.io/badge/Servidor-WoW%20Perú-gold.svg)](https://wow-peru.lat/)
-[![Version](https://img.shields.io/badge/version-1.0.0-brightgreen.svg)](https://github.com/DarckRovert/WoWPeru_Wardrobe/releases)
-[![Build Status](https://img.shields.io/badge/CI-Passing-success.svg)](https://github.com/DarckRovert/WoWPeru_Wardrobe/actions)
+[![WoW Client](https://img.shields.io/badge/WoW%20Client-3.3.5a%20(Build%2012340)-blue.svg)](https://worldofwanos.com/)
+[![Servidor](https://img.shields.io/badge/Servidor-WoW%20Perú-gold.svg)](https://worldofwanos.com/)
+[![Version](https://img.shields.io/badge/version-1.0.0-brightgreen.svg)](https://github.com/DarckRovert/Wanos_Wardrobe/releases)
+[![Build Status](https://img.shields.io/badge/CI-Passing-success.svg)](https://github.com/DarckRovert/Wanos_Wardrobe/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 ---
 
-## 🌟 ¿Qué es WoWPeru_Wardrobe?
+## 🌟 ¿Qué es Wanos_Wardrobe?
 
-**WoWPeru_Wardrobe** es el **módulo oficial #15** del ecosistema de addons de **WoW Perú - Reino Andino**. Proporciona una interfaz moderna, inmersiva y de alto rendimiento para la colección y transfiguración de apariencias visuales en el cliente World of Warcraft 3.3.5a (Wrath of the Lich King).
+**Wanos_Wardrobe** es el **módulo oficial #15** del ecosistema de addons de **Project Jaina - Project Jaina**. Proporciona una interfaz moderna, inmersiva y de alto rendimiento para la colección y transfiguración de apariencias visuales en el cliente World of Warcraft 3.3.5a (Wrath of the Lich King).
 
 Inspirado en interfaces de guardarropa avanzadas y optimizado específicamente para el motor 3.3.5a, este addon ha sido completamente **sanitizado, re-ingenierizado y protegido contra fallos de concurrencia y congelamiento de FPS**.
 
@@ -84,11 +84,11 @@ Inspirado en interfaces de guardarropa avanzadas y optimizado específicamente p
 
 ## 📥 Instalación en el Cliente WoW
 
-1. Asegúrate de que la carpeta `WoWPeru_Wardrobe` se encuentre dentro de:
+1. Asegúrate de que la carpeta `Wanos_Wardrobe` se encuentre dentro de:
    ```
-   World of Warcraft/Interface/AddOns/WoWPeru_Wardrobe/
+   World of Warcraft/Interface/AddOns/Wanos_Wardrobe/
    ```
-2. Inicia el cliente de juego WoW Perú y verifica que el addon esté marcado en la lista de accesorios del personaje.
+2. Inicia el cliente de juego Project Jaina y verifica que el addon esté marcado en la lista de accesorios del personaje.
 3. Dentro del juego, escribe `/armario` o `/wardrobe` para abrir la interfaz.
 
 ---

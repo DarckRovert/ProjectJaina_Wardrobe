@@ -15,7 +15,7 @@
 
 PLARM = PLARM or {}
 
-local A = "Interface\\AddOns\\WoWPeru_Wardrobe\\arte2\\"
+local A = "Interface\\AddOns\\Jaina_Wardrobe\\arte2\\"
 PLARM.ARTE2 = A
 
 --  { ancho usado, alto usado, ancho lienzo, alto lienzo } de cada pieza.
@@ -400,7 +400,7 @@ function PLARM.SeccionLateral(padre, texto, ancho, alto)
     b.activa:SetTexCoord(0, 1, 0, 224 / 256)
     b.activa:SetPoint("TOPLEFT", -6, 2); b.activa:SetPoint("BOTTOMRIGHT", 0, -2)
     b.barra = b:CreateTexture(nil, "BORDER")
-    b.barra:SetTexture("Interface\Buttons\WHITE8X8")
+    b.barra:SetTexture("Interface\\Buttons\\WHITE8X8")
     b.barra:SetVertexColor(0.95, 0.72, 0.28)
     b.barra:SetPoint("TOPLEFT", -4, -4); b.barra:SetPoint("BOTTOMLEFT", -4, 4)
     b.barra:SetWidth(3)

@@ -194,9 +194,9 @@ local cache = { nombres = {}, version = 0, piezas = nil, piezasVersion = -1 }
 local cargador = CreateFrame("Frame")
 cargador:RegisterEvent("ADDON_LOADED")
 cargador:SetScript("OnEvent", function(self, _, quien)
-    if quien ~= "WoWPeru_Wardrobe" then return end
-    WoWPeru_Wardrobe_Cache = WoWPeru_Wardrobe_Cache or { nombres = {}, version = 0 }
-    cache = WoWPeru_Wardrobe_Cache
+    if quien ~= "ProjectJaina_Wardrobe" then return end
+    ProjectJaina_Wardrobe_Cache = ProjectJaina_Wardrobe_Cache or { nombres = {}, version = 0 }
+    cache = ProjectJaina_Wardrobe_Cache
     cache.nombres = cache.nombres or {}
 end)
 
@@ -587,7 +587,7 @@ local TMOG_TEXTO = {
     [6]  = { "Esa apariencia no encaja con lo que llevas en esa ranura.", true },
     [7]  = { "No tienes oro suficiente para transfigurar.", true },
     [8]  = { "Te faltan fichas para transfigurar.", true },
-    -- WoW Perú transfiguración dual (Oro o Token Andino)
+    -- Project Jaina transfiguración dual (Oro o Token Andino)
     [90] = { "Para transfigurar tienes que estar en Ventormenta u Orgrimmar.", true },
     [91] = { "No tienes Tokens Andinos suficientes para transfigurar.", true },
 }
@@ -813,7 +813,7 @@ function C_Appearance.SetPendingItemSet(setid)      Mandar("pendset|" .. setid) 
 function C_Appearance.SetPendingPiece(id)          Mandar("pendpieza|" .. id) end
 
 function C_Appearance.GetAppearanceWebURL()
-    return "https://wow-peru.lat/tienda"
+    return "https://worldofwanos.com/tienda"
 end
 
 --  Lo que en su cliente existe y aqui no aplica. Se dejan devolviendo el

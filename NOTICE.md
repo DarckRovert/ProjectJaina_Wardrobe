@@ -1,4 +1,4 @@
-# 📜 Aviso Legal y Atribución — WoWPeru_Wardrobe
+# 📜 Aviso Legal y Atribución — Wanos_Wardrobe
 
 Este proyecto incorpora código, conceptos arquitectónicos y recursos de múltiples fuentes de la comunidad de emulación y desarrollo de World of Warcraft:
 
@@ -18,13 +18,13 @@ Este proyecto incorpora código, conceptos arquitectónicos y recursos de múlti
 
 ---
 
-## 3. Re-ingeniería, Hardening y Gobernanza (WoW Perú)
-- **Mantenimiento y Adaptación:** DarckRovert & WoW Perú Engineering Team
-- **Servidor y Ecosistema:** [WoW Perú — Reino Andino](https://wow-peru.lat/)
+## 3. Re-ingeniería, Hardening y Gobernanza (Project Jaina)
+- **Mantenimiento y Adaptación:** DarckRovert & Project Jaina Engineering Team
+- **Servidor y Ecosistema:** [Project Jaina — Project Jaina](https://worldofwanos.com/)
 - **Transformaciones Arquitectónicas Implementadas:**
   1. Erradicación total del secuestro global de errores (`seterrorhandler` en `Registro.lua`).
   2. Supresión de telemetría y transmisiones masivas de logs por canales de chat.
   3. Eliminación de dependencias de librerías DLL inyectadas en cliente (`PeruLand.dll`).
-  4. Sustitución de dominios y URLs externas por la infraestructura oficial de WoW Perú.
+  4. Sustitución de dominios y URLs externas por la infraestructura oficial de Project Jaina.
   5. Creación del backend autoritativo en Eluna (`60_WardrobeSystem.lua`) y persistencia en MySQL (`character_transmog_collection`).
   6. Estandarización de protocolos de red bajo el prefijo unificado `WP_WARDROBE`.

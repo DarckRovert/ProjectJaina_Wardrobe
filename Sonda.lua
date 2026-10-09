@@ -23,11 +23,11 @@ local PREFIJO = "WP_WARDROBE"
 --  Un tooltip escondido para preguntarle al cliente por un objeto suelto
 --  (orden `item|<id>`). Se crea UNA vez, aqui: crearlo dentro del manejador
 --  con un nombre distinto cada vez deja marcos vivos para siempre.
-local sondaItem = CreateFrame("GameTooltip", "WoWPeru_Wardrobe_SondaItem", nil,
+local sondaItem = CreateFrame("GameTooltip", "ProjectJaina_Wardrobe_SondaItem", nil,
                               "GameTooltipTemplate")
 sondaItem:SetOwner(UIParent, "ANCHOR_NONE")
 
-local sonda = CreateFrame("DressUpModel", "WoWPeru_Wardrobe_Sonda3D", UIParent)
+local sonda = CreateFrame("DressUpModel", "ProjectJaina_Wardrobe_Sonda3D", UIParent)
 sonda:SetSize(64, 64)
 sonda:SetPoint("TOPLEFT", UIParent, "TOPLEFT", -500, 500)   -- fuera de pantalla
 sonda:Hide()
@@ -38,14 +38,14 @@ sonda:Hide()
 --
 --    🎯 Un instrumento se valida contra algo que TIENE que salir. Aqui, un
 --       modelo de Blizzard puesto a mano: si ese falla, el roto es la sonda.
-local control = CreateFrame("DressUpModel", "WoWPeru_Wardrobe_Control3D", UIParent)
+local control = CreateFrame("DressUpModel", "ProjectJaina_Wardrobe_Control3D", UIParent)
 control:SetSize(64, 64)
 control:SetPoint("CENTER")          -- ⚠️ en pantalla: un marco fuera de la
 control:SetAlpha(0)                 --    vista puede no llegar a dibujarse
 control:Show()
 
 local function Informe()
-    control:SetModel("character\human\male\humanmale.m2")
+    control:SetModel("character\\human\\male\\humanmale.m2")
     sonda:SetAlpha(0)
     sonda:SetPoint("CENTER")        -- misma razon que el control
     sonda:Show()
@@ -122,7 +122,7 @@ end)
 --  sin cerrar y abrir el juego en cada vuelta.
 --  El nombre real del marco, en UN solo sitio. Escrito dos veces es como se
 --  desincroniza (ver el arreglo de `cerrar` mas abajo).
-local NOMBRE_VENTANA = "WoWPeru_Wardrobe_Frame"
+local NOMBRE_VENTANA = "ProjectJaina_Wardrobe_Frame"
 
 --  Las unicas ordenes que se acusan. Lo demas que entra por este canal son
 --  RESPUESTAS DEL SERVIDOR, y contestarlas duplicaria el trafico -- ver el
@@ -276,7 +276,7 @@ rx:SetScript("OnEvent", function(_, _, pre, msg, _, quien)
         --  Guardados y Tienda desde SSH.
         local n = tonumber(msg:sub(9))
         local col = PLARM.Ventana and PLARM.Ventana.coleccion
-        col = col or (_G["WoWPeru_Wardrobe_Frame"] and _G["WoWPeru_Wardrobe_Frame"].coleccion) or (_G["PeruLandArmarioV2"] and _G["PeruLandArmarioV2"].coleccion)
+        col = col or (_G["ProjectJaina_Wardrobe_Frame"] and _G["ProjectJaina_Wardrobe_Frame"].coleccion) or (_G["PeruLandArmarioV2"] and _G["PeruLandArmarioV2"].coleccion)
         if col and col.pestanas and col.pestanas[n] then col.pestanas[n].pulsar() end
     elseif msg == "aplicar" then
         if PLARM.Aplicar2 then PLARM.Aplicar2() end
@@ -477,7 +477,7 @@ rx:SetScript("OnEvent", function(_, _, pre, msg, _, quien)
                 if fi and fi.cargando then
                     fi.cargando:Show()
                     if i == 2 and fi.cargando.ruleta then
-                        fi.cargando.ruleta:SetTexture("Interface\Icons\INV_Misc_QuestionMark")
+                        fi.cargando.ruleta:SetTexture("Interface\\Icons\\INV_Misc_QuestionMark")
                         fi.cargando.ruleta:SetBlendMode("BLEND")
                     end
                 end

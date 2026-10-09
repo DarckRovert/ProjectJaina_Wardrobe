@@ -270,7 +270,7 @@ PLARM.RAREZAS = {
     [4] = { nombre = "Legendario", color = { 1.00, 0.50, 0.00 } },
 }
 
-PLARM.RUTA_ARTE = "Interface\\AddOns\\WoWPeru_Wardrobe\\arte\\"
+PLARM.RUTA_ARTE = "Interface\\AddOns\\Jaina_Wardrobe\\arte\\"
 
 -- ---------------------------------------------------------------------------
 --  PLARM.RutaArte  ·  la ruta que DE VERDAD carga, o nil
@@ -463,7 +463,7 @@ end
 --
 --    🎯 Para forzar una descarga, usa algo cuyo fallo no cueste nada. Yo
 --       estaba usando justo lo contrario: la pieza mas fragil del sistema.
-local sonda = CreateFrame("GameTooltip", "WoWPeru_Wardrobe_Sonda", nil, "GameTooltipTemplate")
+local sonda = CreateFrame("GameTooltip", "ProjectJaina_Wardrobe_Sonda", nil, "GameTooltipTemplate")
 sonda:SetOwner(UIParent, "ANCHOR_NONE")
 
 --  🔴 Y CON FRENO, QUE NO LO TENIA.

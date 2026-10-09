@@ -127,7 +127,7 @@ sin ellos la imagen parpadea.
 Es lo más importante de esta guía, porque sin esto se trabaja a ciegas.
 
 1. Deja el archivo en `Interface\AddOns\PeruLandArmario\`
-   (del cliente de pruebas: `D:\WoW PeruLand (Staging - Pruebas)`)
+   (del cliente de pruebas: `D:\Project JainaLand (Staging - Pruebas)`)
 2. **Cierra el juego y ábrelo** ← ver el aviso de abajo
 3. Dentro, escribe:
 
@@ -178,9 +178,9 @@ Por si quieres partir de ella o cambiarla (`Estilo.lua`):
 ---
 
 ## Documentos relacionados
-
-- [79](../../79-ARMARIO-DE-COSMETICOS.md) — el armario y las apariencias
-- [28](../../28-ICONOS-PROPIOS.md) — iconos de objeto, que es otra tubería
+ 
+- [README](README.md) — el armario y las apariencias (arquitectura y uso)
+- [API](API.md) — especificación técnica y protocolos de red
 
 ## La ficha de la colección — las 7 ranuras
 
@@ -227,7 +227,7 @@ que se salen del marco.
 ### 🔴 Formato: TGA de 32 bits, de ABAJO ARRIBA
 
 ```bash
-py modelos/png_a_tga.py mi-imagen.png "D:/WoW PeruLand (Staging - Pruebas)/Interface/AddOns/PeruLandArmario/arte/celda-fondo.tga"
+py modelos/png_a_tga.py mi-imagen.png "D:/Project JainaLand (Staging - Pruebas)/Interface/AddOns/PeruLandArmario/arte/celda-fondo.tga"
 ```
 
 Los lados tienen que ser **potencia de dos** (32, 64, 128, 256, 1024…).
