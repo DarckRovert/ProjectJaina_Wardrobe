@@ -6,8 +6,8 @@
 
 local PREFIJO = "WP_WARDROBE"
 
-Wanos_Wardrobe_Registro = Wanos_Wardrobe_Registro or ProjectJaina_Wardrobe_Registro or {}
-        ProjectJaina_Wardrobe_Registro = Wanos_Wardrobe_Registro
+ProjectJaina_Wardrobe_Registro = ProjectJaina_Wardrobe_Registro or ProjectJaina_Wardrobe_Registro or {}
+        ProjectJaina_Wardrobe_Registro = ProjectJaina_Wardrobe_Registro
 
 local guardado = ProjectJaina_Wardrobe_Registro
 local vistos = {}
@@ -39,9 +39,9 @@ local ev = CreateFrame("Frame")
 ev:RegisterEvent("ADDON_LOADED")
 ev:RegisterEvent("PLAYER_ENTERING_WORLD")
 ev:SetScript("OnEvent", function(_, evento, cual)
-    if evento == "ADDON_LOADED" and (cual == "Wanos_Wardrobe" or cual == "ProjectJaina_Wardrobe") then
-        Wanos_Wardrobe_Registro = Wanos_Wardrobe_Registro or ProjectJaina_Wardrobe_Registro or {}
-        ProjectJaina_Wardrobe_Registro = Wanos_Wardrobe_Registro
+    if evento == "ADDON_LOADED" and (cual == "ProjectJaina_Wardrobe" or cual == "ProjectJaina_Wardrobe") then
+        ProjectJaina_Wardrobe_Registro = ProjectJaina_Wardrobe_Registro or ProjectJaina_Wardrobe_Registro or {}
+        ProjectJaina_Wardrobe_Registro = ProjectJaina_Wardrobe_Registro
         guardado = ProjectJaina_Wardrobe_Registro
         Apuntar("carga", "ProjectJaina_Wardrobe inicializado correctamente.")
     elseif evento == "PLAYER_ENTERING_WORLD" then
