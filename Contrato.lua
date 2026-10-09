@@ -813,7 +813,7 @@ function C_Appearance.SetPendingItemSet(setid)      Mandar("pendset|" .. setid) 
 function C_Appearance.SetPendingPiece(id)          Mandar("pendpieza|" .. id) end
 
 function C_Appearance.GetAppearanceWebURL()
-    return "https://worldofwanos.com/tienda"
+    return "https://projectjaina.com/tienda"
 end
 
 --  Lo que en su cliente existe y aqui no aplica. Se dejan devolviendo el

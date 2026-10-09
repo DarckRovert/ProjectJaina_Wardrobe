@@ -615,7 +615,7 @@ local function Crear()
     --
     --    🎯 Una capacidad nueva no puede volverse un requisito. Si la
     --       extension falta, la accion sigue existiendo, mas incomoda.
-    local RECARGA = "https://worldofwanos.com/tienda"
+    local RECARGA = "https://projectjaina.com/tienda"
 
     local recargar = PLARM.Boton(V, "Recargar", 96, 26)
     recargar:ClearAllPoints()

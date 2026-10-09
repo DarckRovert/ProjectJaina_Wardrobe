@@ -2,14 +2,14 @@
 
 **Versión:** 1.0.0 (WotLK 3.3.5a Staggered Render Edition)  
 **Autor:** DarckRovert & Project Jaina Team  
-**Servidor Destino:** [Project Jaina](https://worldofwanos.com/) — Project Jaina  
+**Servidor Destino:** [Project Jaina](https://projectjaina.com/) — Project Jaina  
 **Entorno de Ejecución:** World of Warcraft 3.3.5a (Build 12340) | Lua 5.1 / Eluna C++  
 **Repositorio Oficial:** [DarckRovert/Wanos_Wardrobe](https://github.com/DarckRovert/Wanos_Wardrobe)
 
 ---
 
-[![WoW Client](https://img.shields.io/badge/WoW%20Client-3.3.5a%20(Build%2012340)-blue.svg)](https://worldofwanos.com/)
-[![Servidor](https://img.shields.io/badge/Servidor-WoW%20Perú-gold.svg)](https://worldofwanos.com/)
+[![WoW Client](https://img.shields.io/badge/WoW%20Client-3.3.5a%20(Build%2012340)-blue.svg)](https://projectjaina.com/)
+[![Servidor](https://img.shields.io/badge/Servidor-WoW%20Perú-gold.svg)](https://projectjaina.com/)
 [![Version](https://img.shields.io/badge/version-1.0.0-brightgreen.svg)](https://github.com/DarckRovert/Wanos_Wardrobe/releases)
 [![Build Status](https://img.shields.io/badge/CI-Passing-success.svg)](https://github.com/DarckRovert/Wanos_Wardrobe/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)

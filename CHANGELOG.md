@@ -17,7 +17,7 @@ Todas las modificaciones notables de este proyecto están documentadas en este a
 
 ### Modificado
 - **Sanitización de Red:** Migración completa de prefijo `PLARMARIO` a `WP_WARDROBE`.
-- **Rebranding y Rutas:** Estandarización de rutas de texturas a `Interface\AddOns\Jaina_Wardrobe\arte\`.
+- **Rebranding y Rutas:** Estandarización de rutas de texturas a `Interface\AddOns\ProjectJaina_Wardrobe\arte\`.
 - **Fondo Base Defensivo:** Incorporación de marco liso oscuro y borde dorado en `Ventana.lua` para garantizar renderizado perfecto sin depender de MPQs externos.
 
 ### Eliminado
