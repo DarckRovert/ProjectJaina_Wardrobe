@@ -574,6 +574,13 @@ respuestas["prueba"] = function(resto)
 end
 
 respuestas["ok"]  = function(resto) PLARM.Eventos.Disparar("ARMARIO_AVISO", resto, false) end
+respuestas["abrir"] = function()
+    if PLARM and PLARM.Abrir2 then
+        PLARM.Abrir2()
+    elseif SlashCmdList and SlashCmdList["WP_WARDROBEV2"] then
+        SlashCmdList["WP_WARDROBEV2"]("")
+    end
+end
 
 --  🪄 La respuesta de `.transmog aplicar` (el nucleo, cs_transmog.cpp):
 --  tmog|<ranura>|<objeto>|<resultado>. Los numeros son los de TransmogStrings.

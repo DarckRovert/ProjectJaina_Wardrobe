@@ -47,7 +47,7 @@ Inspirado en interfaces de guardarropa avanzadas y optimizado específicamente p
 - El jugador puede probarse cualquier atuendo en el guardarropa sin que sus estadísticas o visualización de combate se desvirtúen.
 
 ### 3. 🗄️ Backend Autoritativo en Eluna & MySQL
-- Respaldado en el servidor por el script [`60_WardrobeSystem.lua`](file:///E:/AzerothCore/server/lua_scripts/60_WardrobeSystem.lua) y la tabla `character_transmog_collection` en la base de datos `acore_characters`.
+- Respaldado en el servidor por el script [`60_WardrobeSystem.lua`](file:///E:/JainaCore_Server/server/lua_scripts/60_WardrobeSystem.lua) y la tabla `character_transmog_collection` en la base de datos `acore_characters`.
 - Validación estricta de propiedad de la apariencia antes de aplicar cualquier cambio visual.
 - Soporte para cobro dual: Oro nativo o Tokens Andinos oficiales.
 
