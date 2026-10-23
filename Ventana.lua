@@ -970,7 +970,7 @@ local function Crear()
           end },
         { texto = "Tienda",
           alPulsar = function()
-              local abrir = SlashCmdList and (SlashCmdList["JAINA_VISUAL"] or SlashCmdList["WOWPERU_VISUAL"] or SlashCmdList["WOWPERUVISUALSHOP"])
+              local abrir = SlashCmdList and (SlashCmdList["PROJECTJAINA_STORE"] or SlashCmdList["JAINA_VISUAL"] or SlashCmdList["WOWPERU_VISUAL"] or SlashCmdList["WOWPERUVISUALSHOP"])
               if abrir then
                   ProjectJaina_Cruzar(V, function() abrir("") end)
               end
