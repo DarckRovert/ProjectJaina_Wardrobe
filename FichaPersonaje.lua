@@ -146,8 +146,8 @@ local function IniciarBotonGuardarropa()
         PlaySound("igMainMenuOption")
         if PLARM and PLARM.Abrir2 then
             PLARM.Abrir2()
-        elseif SlashCmdList and SlashCmdList["WP_WARDROBEV2"] then
-            SlashCmdList["WP_WARDROBEV2"]("")
+        elseif SlashCmdList and (SlashCmdList["JAINA_WARDROBE"] or SlashCmdList["WP_WARDROBEV2"]) then
+            (SlashCmdList["JAINA_WARDROBE"] or SlashCmdList["WP_WARDROBEV2"])("")
         end
     end)
 

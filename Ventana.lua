@@ -628,11 +628,11 @@ local function Crear()
         else
             --  Sin extension: la direccion en una caja ya seleccionada, para
             --  que baste Ctrl+C.
-            StaticPopup_Show("WOWPERU_WARDROBE_RECARGA")
+            StaticPopup_Show("JAINA_WARDROBE_RECARGA")
         end
     end)
 
-    StaticPopupDialogs["WOWPERU_WARDROBE_RECARGA"] = {
+    StaticPopupDialogs["JAINA_WARDROBE_RECARGA"] = {
         text = "Copia esta direccion y abrela en tu navegador:",
         button1 = "Cerrar",
         hasEditBox = 1, editBoxWidth = 260,
@@ -642,7 +642,8 @@ local function Crear()
             if caja then caja:SetText(RECARGA); caja:HighlightText() end
         end,
     }
-    StaticPopupDialogs["PERULAND_ARMARIO_RECARGA"] = StaticPopupDialogs["WOWPERU_WARDROBE_RECARGA"]
+    StaticPopupDialogs["WOWPERU_WARDROBE_RECARGA"] = StaticPopupDialogs["JAINA_WARDROBE_RECARGA"]
+    StaticPopupDialogs["PERULAND_ARMARIO_RECARGA"] = StaticPopupDialogs["JAINA_WARDROBE_RECARGA"]
 
     --- Rellena la ficha con lo que diga el servidor de ese conjunto.
     local mirando
@@ -770,7 +771,7 @@ local function Crear()
         end
         if hayTmog and not modo then
             if not EnCapital() then
-                StaticPopup_Show("WOWPERU_WARDROBE_TMOG_LEJOS")
+                StaticPopup_Show("JAINA_WARDROBE_TMOG_LEJOS")
                 return
             end
             local n = 0
@@ -779,10 +780,10 @@ local function Crear()
             end
             --  🪤 StaticPopup_Show de 3.3.5a solo pasa DOS valores al texto
             --     (el tercero revienta en SetFormattedText): se escribe aqui.
-            StaticPopupDialogs["WOWPERU_WARDROBE_TMOG_PAGO"].text = string.format(
+            StaticPopupDialogs["JAINA_WARDROBE_TMOG_PAGO"].text = string.format(
                 "Transfigurar %d pieza(s).\n\nCuesta %d de oro, o %d Tokens Andinos.\n¿Cómo quieres pagar?",
                 n, n * PLARM.TMOG_ORO, n * PLARM.TMOG_CRED)
-            StaticPopup_Show("WOWPERU_WARDROBE_TMOG_PAGO")
+            StaticPopup_Show("JAINA_WARDROBE_TMOG_PAGO")
             return
         end
         local creditos = (modo == "creditos")
@@ -828,7 +829,7 @@ local function Crear()
             if self.PLFondo then self.PLFondo:Hide() end
         end
     end
-    StaticPopupDialogs["WOWPERU_WARDROBE_TMOG_PAGO"] = {
+    StaticPopupDialogs["JAINA_WARDROBE_TMOG_PAGO"] = {
         text = "",   -- se rellena al mostrarla (ver Aplicar2)
         button1 = "Pagar con oro", button2 = "Cancelar", button3 = "Pagar con Tokens",
         OnAccept = function() Aplicar2("oro") end,
@@ -837,16 +838,18 @@ local function Crear()
         OnHide = function(self) PLARM.PopupEncima(self, false) end,
         timeout = 0, whileDead = true, hideOnEscape = true, preferredIndex = 3,
     }
-    StaticPopupDialogs["PERULAND_ARMARIO_TMOG_PAGO"] = StaticPopupDialogs["WOWPERU_WARDROBE_TMOG_PAGO"]
+    StaticPopupDialogs["WOWPERU_WARDROBE_TMOG_PAGO"] = StaticPopupDialogs["JAINA_WARDROBE_TMOG_PAGO"]
+    StaticPopupDialogs["PERULAND_ARMARIO_TMOG_PAGO"] = StaticPopupDialogs["JAINA_WARDROBE_TMOG_PAGO"]
 
-    StaticPopupDialogs["WOWPERU_WARDROBE_TMOG_LEJOS"] = {
+    StaticPopupDialogs["JAINA_WARDROBE_TMOG_LEJOS"] = {
         text = "Para transfigurar tienes que estar en Ventormenta u Orgrimmar.\n\n(Quitar una transfiguración se puede en cualquier sitio.)",
         button1 = "Entendido",
         OnShow = function(self) PLARM.PopupEncima(self, true) end,
         OnHide = function(self) PLARM.PopupEncima(self, false) end,
         timeout = 0, whileDead = true, hideOnEscape = true, preferredIndex = 3,
     }
-    StaticPopupDialogs["PERULAND_ARMARIO_TMOG_LEJOS"] = StaticPopupDialogs["WOWPERU_WARDROBE_TMOG_LEJOS"]
+    StaticPopupDialogs["WOWPERU_WARDROBE_TMOG_LEJOS"] = StaticPopupDialogs["JAINA_WARDROBE_TMOG_LEJOS"]
+    StaticPopupDialogs["PERULAND_ARMARIO_TMOG_LEJOS"] = StaticPopupDialogs["JAINA_WARDROBE_TMOG_LEJOS"]
 
     --  🔑 GUARDAR ATUENDO: pide el nombre y lo manda. Lo que se guarda es lo
     --  que llevas PUESTO segun el servidor, no lo que crea el addon -- si no,
@@ -854,10 +857,10 @@ local function Crear()
     local guardar = PLARM.BotonG(V, "Guardar atuendo", MX(252), MY(41), false, "GMarcador")
     guardar:SetPoint("TOPLEFT", V, "TOPLEFT", MX(994), -MY(580) - EXTRA)
     guardar:SetScript("OnClick", function()
-        StaticPopup_Show("WOWPERU_WARDROBE_GUARDAR")
+        StaticPopup_Show("JAINA_WARDROBE_GUARDAR")
     end)
 
-    StaticPopupDialogs["WOWPERU_WARDROBE_GUARDAR"] = {
+    StaticPopupDialogs["JAINA_WARDROBE_GUARDAR"] = {
         text = "Nombre para este atuendo:",
         button1 = "Guardar", button2 = "Cancelar",
         hasEditBox = 1, maxLetters = 32,
@@ -875,7 +878,8 @@ local function Crear()
             self:GetParent():Hide()
         end,
     }
-    StaticPopupDialogs["PERULAND_ARMARIO_GUARDAR"] = StaticPopupDialogs["WOWPERU_WARDROBE_GUARDAR"]
+    StaticPopupDialogs["WOWPERU_WARDROBE_GUARDAR"] = StaticPopupDialogs["JAINA_WARDROBE_GUARDAR"]
+    StaticPopupDialogs["PERULAND_ARMARIO_GUARDAR"] = StaticPopupDialogs["JAINA_WARDROBE_GUARDAR"]
 
     --  🔴 30-09-2026: NO HABIA FORMA DE QUITARSE UNA APARIENCIA. «Cancelar»
     --     solo deshace la PRUEBA en el muñeco; lo aplicado se quedaba para
@@ -893,9 +897,9 @@ local function Crear()
     local quitar = PLARM.BotonG(V, "Quitar todo", MX(124), MY(41), false)
     quitar:SetPoint("TOPLEFT", V, "TOPLEFT", MX(1122), -MY(633) - EXTRA)
     quitar:SetScript("OnClick", function()
-        StaticPopup_Show("WOWPERU_WARDROBE_QUITAR")
+        StaticPopup_Show("JAINA_WARDROBE_QUITAR")
     end)
-    StaticPopupDialogs["WOWPERU_WARDROBE_QUITAR"] = {
+    StaticPopupDialogs["JAINA_WARDROBE_QUITAR"] = {
         text = "¿Quitarte todas las apariencias y volver a verte con tu equipo real?\n\nLas apariencias siguen en tu colección: te las puedes volver a poner.",
         button1 = "Quitar", button2 = "Cancelar",
         timeout = 0, whileDead = 1, hideOnEscape = 1, preferredIndex = 3,
@@ -927,7 +931,8 @@ local function Crear()
             estado:SetText("Quitando...")
         end,
     }
-    StaticPopupDialogs["PERULAND_ARMARIO_QUITAR"] = StaticPopupDialogs["WOWPERU_WARDROBE_QUITAR"]
+    StaticPopupDialogs["WOWPERU_WARDROBE_QUITAR"] = StaticPopupDialogs["JAINA_WARDROBE_QUITAR"]
+    StaticPopupDialogs["PERULAND_ARMARIO_QUITAR"] = StaticPopupDialogs["JAINA_WARDROBE_QUITAR"]
 
     -- -----------------------------------------------------------------------
     --  🔴 LA FILA DE ABAJO: SIN ESTO, DEL ARMARIO NO SE SALE
@@ -958,14 +963,14 @@ local function Crear()
     local PESTANAS = {
         { texto = "Progresión",
           alPulsar = function()
-              local abrir = SlashCmdList and (SlashCmdList["WOWPERU_MODES"] or SlashCmdList["WOWPERUPRIDE"])
+              local abrir = SlashCmdList and (SlashCmdList["JAINA_MODES"] or SlashCmdList["WOWPERU_MODES"] or SlashCmdList["WOWPERUPRIDE"])
               if abrir then
                   ProjectJaina_Cruzar(V, function() abrir("") end)
               end
           end },
         { texto = "Tienda",
           alPulsar = function()
-              local abrir = SlashCmdList and (SlashCmdList["WOWPERU_VISUAL"] or SlashCmdList["WOWPERUVISUALSHOP"])
+              local abrir = SlashCmdList and (SlashCmdList["JAINA_VISUAL"] or SlashCmdList["WOWPERU_VISUAL"] or SlashCmdList["WOWPERUVISUALSHOP"])
               if abrir then
                   ProjectJaina_Cruzar(V, function() abrir("") end)
               end
@@ -973,7 +978,7 @@ local function Crear()
         { texto = "Armario", aqui = true },
         { texto = "Pase de Batalla",
           alPulsar = function()
-              local abrir = SlashCmdList and SlashCmdList["WOWPERUBP"]
+              local abrir = SlashCmdList and (SlashCmdList["JAINA_BP"] or SlashCmdList["WOWPERUBP"])
               if abrir then
                   ProjectJaina_Cruzar(V, function() abrir("") end)
               end
@@ -1049,7 +1054,7 @@ local function Crear()
     pase:SetPoint("TOPLEFT", V, "TOPLEFT", MX(6), -MY(97 + 5 * 97))   -- 6.a: «Transfigurar» es la 5.a
     pase:PonerIcono("GIcoPase")
     pase:SetScript("OnClick", function()
-        local abrir = SlashCmdList and (SlashCmdList["WOWPERUBP"] or SlashCmdList["PERULANDPASE"])
+        local abrir = SlashCmdList and (SlashCmdList["JAINA_BP"] or SlashCmdList["WOWPERUBP"] or SlashCmdList["PERULANDPASE"])
         if abrir then
             ProjectJaina_Cruzar(V, function() abrir("") end)
         end
@@ -1230,16 +1235,21 @@ end
 --       lo teclea cree que el sistema esta roto, no que se llama de otra forma.
 --
 --  `/armario2` se queda por si alguien lo tiene en una macro.
-SLASH_WP_WARDROBEV21 = "/armario"
-SLASH_WP_WARDROBEV22 = "/arm"
-SLASH_WP_WARDROBEV23 = "/armario2"
-SLASH_WP_WARDROBEV24 = "/guardarropa"
-SLASH_WP_WARDROBEV25 = "/wardrobe"
-SlashCmdList["WP_WARDROBEV2"] = function(arg)
+SLASH_JAINA_WARDROBE1 = "/armario"
+SLASH_JAINA_WARDROBE2 = "/arm"
+SLASH_JAINA_WARDROBE3 = "/armario2"
+SLASH_JAINA_WARDROBE4 = "/guardarropa"
+SLASH_JAINA_WARDROBE5 = "/wardrobe"
+SLASH_JAINA_WARDROBE6 = "/jainawardrobe"
+SlashCmdList["JAINA_WARDROBE"] = function(arg)
     if arg == "prueba" then PLARM.Contrato.Autoprueba() return end
     if arg == "diag" then PLARM.Contrato.Diag() return end
     if V and V:IsShown() then V:Hide() else PLARM.Abrir2() end
 end
+
+-- Puentes pasivos de retrocompatibilidad arquitectónica
+SlashCmdList["WP_WARDROBEV2"] = SlashCmdList["JAINA_WARDROBE"]
+SlashCmdList["WOWPERU_WARDROBE"] = SlashCmdList["JAINA_WARDROBE"]
 
 --  Marca de carga: si este archivo revienta, su linea NO sale y se ve al
 --  instante cual es. Los errores de Lua vienen apagados de fabrica.

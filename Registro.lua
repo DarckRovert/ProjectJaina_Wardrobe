@@ -4,7 +4,7 @@
     100% libre de telemetría invasiva y libre de manipulación de seterrorhandler.
 ]]
 
-local PREFIJO = "WP_WARDROBE"
+local PREFIJO = "JAINA_WARDROBE"
 
 ProjectJaina_Wardrobe_Registro = ProjectJaina_Wardrobe_Registro or ProjectJaina_Wardrobe_Registro or {}
         ProjectJaina_Wardrobe_Registro = ProjectJaina_Wardrobe_Registro

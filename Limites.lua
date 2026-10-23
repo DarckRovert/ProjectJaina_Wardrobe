@@ -26,7 +26,7 @@
 --
 --    🎯 Un archivo que no carga y uno que carga y no hace nada se ven igual
 --       desde fuera. Por eso cada archivo avisa de su nombre al cargar.
-local PREFIJO = "WP_WARDROBE"
+local PREFIJO = "JAINA_WARDROBE"
 
 local resultados = {}
 

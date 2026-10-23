@@ -38,7 +38,8 @@
 PLARM = PLARM or {}
 PLARM.Contrato = { VERSION = 1 }
 
-local PREFIJO = "WP_WARDROBE"
+local PREFIJO        = "JAINA_WARDROBE"
+local PREFIJO_LEGACY = "WP_WARDROBE"
 
 -- ---------------------------------------------------------------------------
 --  Eventos propios
@@ -106,6 +107,10 @@ local colaSalida, segundoActual, enviadosEsteSegundo = {}, 0, 0
 
 local function Soltar(texto)
     eco[texto] = GetTime()
+    if RegisterAddonMessagePrefix then
+        RegisterAddonMessagePrefix(PREFIJO)
+        RegisterAddonMessagePrefix(PREFIJO_LEGACY)
+    end
     SendAddonMessage(PREFIJO, texto, "WHISPER", UnitName("player"))
 end
 
@@ -577,8 +582,8 @@ respuestas["ok"]  = function(resto) PLARM.Eventos.Disparar("ARMARIO_AVISO", rest
 respuestas["abrir"] = function()
     if PLARM and PLARM.Abrir2 then
         PLARM.Abrir2()
-    elseif SlashCmdList and SlashCmdList["WP_WARDROBEV2"] then
-        SlashCmdList["WP_WARDROBEV2"]("")
+    elseif SlashCmdList and (SlashCmdList["JAINA_WARDROBE"] or SlashCmdList["WP_WARDROBEV2"]) then
+        (SlashCmdList["JAINA_WARDROBE"] or SlashCmdList["WP_WARDROBEV2"])("")
     end
 end
 
@@ -616,7 +621,7 @@ end
 local oyente = CreateFrame("Frame")
 oyente:RegisterEvent("CHAT_MSG_ADDON")
 oyente:SetScript("OnEvent", function(self, evento, prefijo, texto, _, quien)
-    if prefijo ~= PREFIJO then return end
+    if prefijo ~= PREFIJO and prefijo ~= PREFIJO_LEGACY then return end
     --  🔴 SOLO MENSAJES DEL SERVIDOR (29-09-2026): el servidor nos los manda
     --     como susurro de nosotros mismos. Sin esto, OTRO jugador podia
     --     mandarnos mensajes con este prefijo y manejar el addon: abrir una

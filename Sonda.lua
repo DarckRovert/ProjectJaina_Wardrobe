@@ -18,7 +18,7 @@
 --     Preguntar en el mismo fotograma da siempre vacio, tambien cuando todo
 --     funciona, y eso es un instrumento que miente.
 
-local PREFIJO = "WP_WARDROBE"
+local PREFIJO = "JAINA_WARDROBE"
 
 --  Un tooltip escondido para preguntarle al cliente por un objeto suelto
 --  (orden `item|<id>`). Se crea UNA vez, aqui: crearlo dentro del manejador
