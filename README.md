@@ -18,7 +18,7 @@
 
 ## 🌟 ¿Qué es ProjectJaina_Wardrobe?
 
-**ProjectJaina_Wardrobe** es el **módulo oficial #15** del ecosistema de addons de **Project Jaina - Project Jaina**. Proporciona una interfaz moderna, inmersiva y de alto rendimiento para la colección y transfiguración de apariencias visuales en el cliente World of Warcraft 3.3.5a (Wrath of the Lich King).
+**ProjectJaina_Wardrobe** es el **módulo oficial #15** del ecosistema de addons de **Project Jaina**. Proporciona una interfaz moderna, inmersiva y de alto rendimiento para la colección y transfiguración de apariencias visuales en el cliente World of Warcraft 3.3.5a (Wrath of the Lich King).
 
 Inspirado en interfaces de guardarropa avanzadas y optimizado específicamente para el motor 3.3.5a, este addon ha sido completamente **sanitizado, re-ingenierizado y protegido contra fallos de concurrencia y congelamiento de FPS**.
 
