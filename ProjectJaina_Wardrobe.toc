@@ -1,8 +1,9 @@
 ## Interface: 30300
+## Version: 1.0.1
 ## Title: |cFFD4AF37Project Jaina|r - Guardarropa & Transfiguración
 ## Notes: Colección y transfiguración de apariencias estéticas para Project Jaina. Se abre con /armario o /wardrobe.
 ## Author: DarckRovert & Antigravity (Mythos 5)
-## Version: 1.0.0
+## Version: 1.0.1
 ## SavedVariablesPerCharacter: ProjectJaina_Wardrobe_Ajustes
 ## SavedVariables: ProjectJaina_Wardrobe_Cache, ProjectJaina_Wardrobe_Registro
 
