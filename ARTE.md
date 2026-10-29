@@ -13,8 +13,8 @@
 
 | Carpeta | Qué hay |
 |---|---|
-| `D:\ascension-referencia-png\` | **1.166 imágenes en PNG**, listas para abrir |
-| `D:\ascension-referencia\` | las mismas en `.blp` (el formato del juego) |
+| `Data/AssetReferences/PNG/` | **1.166 imágenes en PNG**, listas para abrir |
+| `Data/AssetReferences/BLP/` | las mismas en `.blp` (el formato del juego) |
 
 Lo interesante está en
 `Interface\AddOns\AwAddons\Textures\` — sus marcos, bordes, pestañas, flechas e
@@ -127,7 +127,7 @@ sin ellos la imagen parpadea.
 Es lo más importante de esta guía, porque sin esto se trabaja a ciegas.
 
 1. Deja el archivo en `Interface\AddOns\Project JainaArmario\`
-   (del cliente de pruebas: `D:\Project JainaLand (Staging - Pruebas)`)
+   (del cliente de pruebas: `Staging/Client_TestEnvironment`)
 2. **Cierra el juego y ábrelo** ← ver el aviso de abajo
 3. Dentro, escribe:
 
