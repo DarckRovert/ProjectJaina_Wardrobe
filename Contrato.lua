@@ -268,6 +268,8 @@ respuestas["hola2"] = function(resto)
 end
 
 respuestas["puesto"] = function(resto)
+    if ultimaFirmaPuesto == resto then return end
+    ultimaFirmaPuesto = resto
     E.puesto = {}
     for cat, id in resto:gmatch("(%d+):(%d+)") do
         E.puesto[tonumber(cat)] = tonumber(id)

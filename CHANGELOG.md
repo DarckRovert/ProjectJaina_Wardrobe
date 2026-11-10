@@ -4,6 +4,13 @@ Todos los cambios notables de este proyecto están documentados en este archivo 
 
 ---
 
+## [1.0.2] — 2026-11-10
+### Deduplicación de Equipo Puesto y Paridad Total Cliente-Servidor (Hito #341 / Bug #2)
+- **Supresión de Redibujos Redundantes (`Contrato.lua`):** Validación por firma previa (`ultimaFirmaPuesto`) en el receptor `puesto` antes de reconstruir la tabla de ranuras equipadas.
+- **Sincronía 1:1 con `60_WardrobeSystem.lua`:** Paginación alineada (`ITEMS_PER_PAGE = 10`), máscaras de filtro idénticas a `Filtro.lua`, margen seguro `MAX_ADDON_BYTES = 220`, detección de capitales (`CAPITAL_ZONES`), cobro por `TRANSMOG_COST_TOKENS = 5` y prefijo negociado `playerPrefPrefix`.
+
+---
+
 ## [1.0.1] — 2026-10-10
 ### Estabilización de Ecosistema y Gobernanza Oficial (Project Jaina)
 - **Normalización de UI y Gráficos:** Sincronización SSOT autoritativa con el núcleo de JainaCore (14.3 KB), eliminación de divergencia en paquetes de distribución y visualización 3D fluida.
