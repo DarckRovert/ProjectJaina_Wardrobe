@@ -4,6 +4,12 @@ Todos los cambios notables de este proyecto están documentados en este archivo 
 
 ---
 
+## [1.0.3] — 2026-11-22
+### QoS Diferido de Sonda en Combate y Paridad Caché RAM (Hito #387)
+- **Guarda de Combate en `Sonda.lua`:** Diferida la emisión automática de `Informe()` tras `PLAYER_ENTERING_WORLD` hasta `PLAYER_REGEN_ENABLED` cuando el jugador entra en combate antes de completarse la ventana de 3s.
+
+---
+
 ## [1.0.2] — 2026-11-10
 ### Deduplicación de Equipo Puesto y Paridad Total Cliente-Servidor (Hito #341 / Bug #2)
 - **Supresión de Redibujos Redundantes (`Contrato.lua`):** Validación por firma previa (`ultimaFirmaPuesto`) en el receptor `puesto` antes de reconstruir la tabla de ranuras equipadas.

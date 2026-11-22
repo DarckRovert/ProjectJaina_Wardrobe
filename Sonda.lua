@@ -106,14 +106,27 @@ local function Informe()
     end)
 end
 
+local pendingCombatInforme = false
 local f = CreateFrame("Frame")
 f:RegisterEvent("PLAYER_ENTERING_WORLD")
-f:SetScript("OnEvent", function()
+f:RegisterEvent("PLAYER_REGEN_ENABLED")
+f:SetScript("OnEvent", function(_, event)
+    if event == "PLAYER_REGEN_ENABLED" then
+        if pendingCombatInforme then
+            pendingCombatInforme = false
+            Informe()
+        end
+        return
+    end
     --  3 s: da tiempo a que lleguen las fichas de lo puesto
     local t = GetTime() + 3
     f:SetScript("OnUpdate", function(s)
         if GetTime() < t then return end
         s:SetScript("OnUpdate", nil)
+        if UnitAffectingCombat and UnitAffectingCombat("player") then
+            pendingCombatInforme = true
+            return
+        end
         Informe()
     end)
 end)
